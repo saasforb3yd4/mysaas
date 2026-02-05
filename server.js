@@ -12,7 +12,7 @@ const app = express();
 
 // --- AYARLAR ---
 const PORT = process.env.PORT || 3000;
-const ADMIN_PASSWORD = "admin"; // Panel giriş şifresi
+const ADMIN_PASSWORD = "mylittledaisy"; // Panel giriş şifresi
 
 // 🔒 API GÜVENLİK ANAHTARI
 const APP_SECRET = "LUNA_BOT_SECRET_KEY_2024_SECURE"; 
@@ -306,5 +306,6 @@ app.post('/admin/action', async (req, res) => {
         res.send(`<form id="back" action="/admin/dashboard" method="POST"><input type="hidden" name="password" value="${ADMIN_PASSWORD}"></form><script>document.getElementById('back').submit();</script>`);
     } catch (e) { res.send(`İşlem Hatası: ${e.message}`); }
 });
+
 
 app.listen(PORT, () => console.log(`🚀 Sunucu Hazır!`));
